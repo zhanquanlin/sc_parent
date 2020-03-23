@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--mybatis的核心配置文件-->
+<configuration>
+
+    <!--配置日志-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <typeAliases>
+        <!--扫描包：必须要写实体类的名字!!!-->
+        <package name="cn.kgc.k9509.pojo"></package>
+    </typeAliases>
+
+    <!--配置分页的插件-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
+
+
+    <!-- 加载sql映射文件 -->
+    <mappers>
+        <package name="cn.kgc.k9509.mapper"></package>
+    </mappers>
+</configuration>
